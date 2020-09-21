@@ -12,6 +12,9 @@
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native-elements": "^2.3.2",
+    "react-native-material-kit": "^0.6.0-beta.1",
+    "react-native-vector-icons": "^7.1.0",
     "react-native-web": "^0.11.7"
   },
   "devDependencies": {
