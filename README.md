@@ -1,3 +1,7 @@
+
+Based on 
+https://github.com/thheller/reagent-expo
+
 ```
 $ yarn
 $ shadow-cljs watch app
