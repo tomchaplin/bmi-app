@@ -35,3 +35,9 @@
           (clj->js)
           (rn/StyleSheet.create)))
 
+(defn colored-title-style [color]
+  {:fontWeight "bold"
+   :fontSize 24
+   :textAlign "center"
+   :marginBottom 15
+   :color color})

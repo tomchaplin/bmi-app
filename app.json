@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "hello-world",
-    "slug": "reagent-expo",
+    "name": "BMI Calculator",
+    "slug": "bmi-app",
     "privacy": "public",
     "entryPoint": "./app/index.js",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
@@ -12,11 +12,11 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/BMI_Logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#efefff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,7 +28,8 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "io.tom.bmiapp"
+      "package": "com.tomchaplin.bmiapp",
+	  "versionCode": 1
     }
   }
 }

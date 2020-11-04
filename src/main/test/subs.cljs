@@ -6,9 +6,6 @@
     [goog.string.format]
     ))
 
-(defn myParseFloat [s]
-  (if (= s "") 0 (js/parseFloat s)))
-
 (rf/reg-sub
   ::height-vec
   (fn [db [_]]
@@ -31,7 +28,7 @@
   (fn [_] [(rf/subscribe [::height-vec])
            (rf/subscribe [::height-mode])])
   (fn [[hv hm] _]
-    (let [hv-floats (mapv myParseFloat hv)
+    (let [hv-floats (mapv statics/myParseFloat hv)
           converter (get-in statics/height-modes [hm :to-m])]
       (if
         (some js/isNaN hv-floats)
@@ -61,7 +58,7 @@
   (fn [_] [(rf/subscribe [::weight-vec])
            (rf/subscribe [::weight-mode])])
   (fn [[wv wm] _]
-    (let [wv-floats (mapv myParseFloat wv)
+    (let [wv-floats (mapv statics/myParseFloat wv)
           converter (get-in statics/weight-modes [wm :to-kg])]
       (if
         (some js/isNaN wv-floats)
@@ -72,13 +69,20 @@
 (rf/reg-sub
   ::bmi
 
-  (fn [query-v]
+  (fn [_]
     [(rf/subscribe [::height-in-m])
-     (rf/subscribe [::weight-in-kg])
-     ])
+     (rf/subscribe [::weight-in-kg])])
   
   ; Check for NaN then compute and return formatted string
   (fn [[h w] _]
     (if (or (some js/isNaN [h w]) (= h 0))
-      "..."
-      (gstring/format "%.3f" (/ w (* h h))))))
+      {:string "..." :color "#000000"}
+      (let [bmi       (/ w (* h h))
+            bmi-str   (gstring/format "%.2f" bmi)] 
+        {:string bmi-str
+         :color
+         (cond
+           (< bmi 18.5) "#3ab5de"
+           (< bmi   25) "#3ade4d"
+           (< bmi   30) "#dea73a"
+           :else        "#de4d3a")}))))
