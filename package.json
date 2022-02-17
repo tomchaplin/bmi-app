@@ -1,26 +1,30 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "hello-world",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "web": "expo start --web",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "web": "expo start --web",
     "eject": "expo eject",
-	"build-apk": "expo build:android -t apk"
+    "eas-build-post-install": "npx shadow-cljs release app"
   },
   "dependencies": {
-    "expo": "^35.0.0",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "expo": "~44.0.0",
+    "expo-status-bar": "~1.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "0.64.3",
     "react-native-elements": "^2.3.2",
     "react-native-material-kit": "^0.6.0-beta.1",
     "react-native-vector-icons": "^7.1.0",
-    "react-native-web": "^0.11.7"
+    "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.0.0",
-    "shadow-cljs": "^2.8.81"
+    "@babel/core": "^7.12.9",
+    "@expo/webpack-config": "^0.16.18",
+    "shadow-cljs": "^2.17.2"
   },
   "private": true
 }

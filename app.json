@@ -4,7 +4,6 @@
     "slug": "bmi-app",
     "privacy": "public",
     "entryPoint": "./app/index.js",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
@@ -29,12 +28,16 @@
     },
     "android": {
       "package": "com.tomchaplin.bmiapp",
-      "versionCode": 1
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/BMI_Logo.png",
+        "backgroundColor": "#efefff"
+      }
     },
     "extra": {
       "eas": {
         "projectId": "8e167d35-e231-4dde-a0f9-2369fc63d1ed"
       }
-    }
+    },
   }
 }
