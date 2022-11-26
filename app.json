@@ -29,7 +29,12 @@
     },
     "android": {
       "package": "com.tomchaplin.bmiapp",
-	  "versionCode": 1
+      "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8e167d35-e231-4dde-a0f9-2369fc63d1ed"
+      }
     }
   }
 }
